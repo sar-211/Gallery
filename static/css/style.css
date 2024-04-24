@@ -1,0 +1,38 @@
+.logo{
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 5px;
+  padding: 20px
+}
+
+.camera{
+  margin-right: 10px;
+  margin-bottom: 8px;
+  
+}
+.searchbar{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.login-option{
+  display: flex;
+  justify-content: right;
+}
+.page.box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+.copyright-sec {
+  background-color: #333; /* Adjust the background color as needed */
+  color: #fff; /* Adjust the text color as needed */
+  padding: 20px 0; /* Adjust the padding as needed */
+}
+.copy-right {
+  text-align: center;
+}
+

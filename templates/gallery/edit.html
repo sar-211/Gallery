@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Edit Image</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-body">
+                    <img src="{{image.image.url}}" alt="{{image.title}}" class="img-fluid mb-4">
+                    <form action="{% url 'edit' image.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="title" class="form-label fs-5">Title:</label>
+                            <input type="text" name="title" id="title" class="form-control rounded-pill py-3" value="{{ form.title.value }}" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="description" class="form-label fs-5">Description:</label>
+                            <textarea name="description" id="description" class="form-control rounded-pill py-3" required>{{ form.description.value }}</textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="location" class="form-label fs-5">Location:</label>
+                            <textarea name="location" id="loaction" class="form-control rounded-pill py-3" required>{{ form.location.value }}</textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

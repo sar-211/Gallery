@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main-section">
+    <div class="page-section nopadding cs-nomargin" style="margin-top: 0px; padding-top: 40px; padding-bottom: 40px; margin-bottom: 0px; background-color: #f0f0f0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 mx-auto">
+                    <div class="user-login text-center" style="padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); background-color: #fff;">
+                        <h4 style="margin-bottom: 20px;">Login</h4>
+                        <p style="margin-bottom: 20px;">Enter your information for web access.</p>
+                        <hr style="margin-bottom: 20px;">
+                        <div id="restaurant-sets-holder">
+                            <form action="{% url 'login' %}" class="login-form" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <img class="camera" src="{% static 'logo/camera.svg' %}" alt="image" height="35px">
+                                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                            
+                                <div class="form-floating">
+                                  <input type="username" name="username" class="form-control" id="floatingInput" placeholder="Enter Your Username">
+                                  <label for="floatingInput">Username</label>
+                                </div>
+                                <div class="form-floating">
+                                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Enter Your Password">
+                                  <label for="floatingPassword">Password</label>
+                                </div>
+                                  
+                                  <a href="{% url 'forgot_password' %}" style="text-decoration: none; margin-bottom: 20px; display: block; text-align: right;">Forgot Password?</a>
+                                
+                                <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+                                <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+                                {% include 'includes/alert.html' %}
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
